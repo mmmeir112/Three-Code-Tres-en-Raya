@@ -1,3 +1,41 @@
+from decimal import Decimal, InvalidOperation
+from math import floor
+
+
+# DF2 · RF-05. Estado inicial del diagrama de RAPTOR.
+tablero = "X234O6789"
+turno = 1
+casilla_num = 0
+es_valida = False
+
+if turno == 1:
+    simbolo_actual = "X"
+else:
+    simbolo_actual = "O"
+
+# RAPTOR sale cuando es_valida es True.
+while not es_valida:
+    entrada = input("Ingrese una casilla del 1 al 9: ")
+    try:
+        casilla_num = Decimal(entrada)
+    except InvalidOperation:
+        casilla_num = Decimal(0)  # Una letra sigue el camino de posición inválida.
+
+    if casilla_num.is_finite() and 1 <= casilla_num <= 9 and casilla_num == floor(casilla_num):
+        casilla_num = int(casilla_num)
+        contenido_casilla = tablero[casilla_num - 1]
+        if contenido_casilla != "X" and contenido_casilla != "O":
+            es_valida = True
+            print("Jugada valida. La posicion esta libre.")
+        else:
+            es_valida = False
+            print("Casilla ocupada. Intente nuevamente.")
+    else:
+        print("Posicion invalida. Ingrese un numero entero del 1 al 9.")
+        es_valida = False
+
+print("Posicion aceptada:", casilla_num)
+
 import sys
 
 # DF3 · RF-06 y RF-07. Estado inicial de DF3_fin.rap.
