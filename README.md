@@ -87,8 +87,7 @@ python pruebas_df3.py
 ```
 
 ## Video explicativo
-
-**Enlace al video del equipo:** pendiente de incorporar después de la grabación.
+https://drive.google.com/file/d/1RGTvj-vk4KaZzWXPQsDrEv0I_Jp0pNCl/view?usp=drive_link 
 
 En un máximo de cinco minutos, los tres integrantes demostrarán el menú, una jugada inválida y el fin de la partida, y explicarán cómo se tradujo uno de los diagramas de RAPTOR a Python.
 
